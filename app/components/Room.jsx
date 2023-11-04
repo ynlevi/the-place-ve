@@ -18,16 +18,14 @@ async function Room({ room }) {
           {room.description.substring(0, 140).replace(/\'\s\w*$/, "") + " "}
           <strong className="uppercase font-sans">read more</strong>
         </p>
-        <div className="relative overflow-hidden h-full w-full">
+        <div className="relative overflow-hidden h-48 md:h-64 w-full">
           <Image
             src={`${room.smallImage}`}
             placeholder="blur"
             blurDataURL={blur64}
             alt={room.name}
-            width={0}
-            height={0}
-            sizes="100vw"
-            className="w-full h-full object-cover "
+            fill={true}
+            className="object-cover"
           />
         </div>
       </Link>
