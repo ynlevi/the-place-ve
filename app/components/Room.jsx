@@ -20,7 +20,7 @@ async function Room({ room }) {
         </p>
         <div className="relative overflow-hidden h-48 md:h-64 w-full">
           <Image
-            src={`${room.smallImage}`}
+            src={room.smallImage}
             placeholder="blur"
             blurDataURL={blur64}
             alt={room.name}

@@ -21,7 +21,7 @@ const data = [
     id: 2,
     description: `A Junior Suite is a more spacious and upscale version of a standard hotel room. It typically includes a separate sitting area and a well-appointed bathroom with luxury amenities. These suites are designed for travelers who want extra space and comfort without going for the full extravagance of a Presidential or Royal Suite.`,
     blurImage: `https://res.cloudinary.com/danit332d/image/upload/v1697809124/thumbnail_junior_suite_41a9eabd1d.jpg`,
-    smallImage: ` https://res.cloudinary.com/danit332d/image/upload/v1697808658/small_junior_suite_41a9eabd1d.jpg`,
+    smallImage: `https://res.cloudinary.com/danit332d/image/upload/v1697808658/small_junior_suite_41a9eabd1d.jpg`,
     largeImage: `https://res.cloudinary.com/danit332d/image/upload/v1697808658/junior_suite_41a9eabd1d.jpg`,
   },
   {
