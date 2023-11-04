@@ -1,7 +1,9 @@
 import Link from "next/link";
-
-function Room({ room }) {
+import Image from "next/image";
+import Image64 from "../functions/Image64";
+async function Room({ room }) {
   // const decodedRoomName = room.name.replace(/ /g, "-").toLowerCase();
+  const blur64 = await Image64(room.smallImage);
   return (
     <>
       <Link
@@ -16,11 +18,16 @@ function Room({ room }) {
           {room.description.substring(0, 140).replace(/\'\s\w*$/, "") + " "}
           <strong className="uppercase font-sans">read more</strong>
         </p>
-        <div className="relative overflow-hidden ">
-          <img
+        <div className="relative overflow-hidden h-full">
+          <Image
             src={`${room.smallImage}`}
+            placeholder="blur"
+            blurDataURL={blur64}
             alt={room.name}
-            className="object-cover hover:scale-105 duration-500 h-44 md:h-60 w-full"
+            width={0}
+            height={0}
+            sizes="100vw"
+            className="w-full h-full object-cover "
           />
         </div>
       </Link>

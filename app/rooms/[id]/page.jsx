@@ -6,6 +6,7 @@ import { FaWifi } from "react-icons/fa";
 import { FaTv } from "react-icons/fa";
 import { PiHandSoapFill } from "react-icons/pi";
 import Image from "next/image";
+import Image64 from "@/app/functions/Image64";
 
 export const metadata = {
   title: "The Place - rooms",
@@ -21,20 +22,22 @@ async function page({ params: { id } }) {
     { name: "Toiletries", icon: <PiHandSoapFill size={30} /> },
     { name: "Iron", icon: <TbIroningSteam size={30} /> },
   ];
-
+  const blur64 = await Image64(blurImage);
   return (
     <div dir="ltr" className="mt-20 text-primary mx-auto ">
-      <div className="flex items-center  flex-col-reverse justify-end md:flex-row ">
+      <div className="flex items-center  flex-col-reverse justify-end md:flex-row md:w-10/12 mx-auto">
         <h1 className="text-5xl border-y-4 my-10 md:text-7xl px-3 md:mr-3 md:py-5 md:border-y-8 border-secondary left-32 top-36 z-20 md:absolute ">
           {name}
         </h1>
-        <div className="w-[100vw] h-[40vh] relative md:w-8/12 md:room-clip-md">
+        <div className="w-[100vw] h-[40vh] relative md:h-[58vh] md:w-8/12 md:room-clip-md ">
           <Image
-            blurDataURL={blurImage}
+            blurDataURL={blur64}
             src={`${largeImage}`}
             alt={`${name}'s image`}
             fill={true}
             className="object-cover"
+            placeholder="blur"
+            priority
           />
         </div>
       </div>
